@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: busylogger
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: busybox-httpd-config
+  namespace: busylogger
+data:
+  httpd.sh: httpd -f -p 8180 -h /var/www/
+  wwwroot.mountPath: /var/www
+  index.html: |-
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container and Pod level logs</title>
+    </head>
+    <body>
+    <h1>Logs from containers</h1>
+    <embed src="container-logs.txt" type="text/plain" width="300" height="200">
+    </body>
+    <body>
+    <h1>Logs from pods</h1>
+    <embed src="pod-logs.txt" type="text/plain" width="300" height="200">
+    </body>
+    </html>
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  creationTimestamp:
+  name: busylogger-client-config
+  namespace: busylogger
+data:
+  podconfig.mounthPath: /etc/config
+  logdir.mountPath: /var/log
+  busyconts-arg.sh: tail -f $(find /var/log/containers -type f -name "*.log" | tr '\n' ' ') >> /var/www/container-logs.txt
+  busypods-arg.sh: tail -f $(find /var/log/pods -type f -name "*.log" | tr '\n' ' ') >> /var/www/pod-logs.txt

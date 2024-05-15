@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: test-busybox-httpd-config
+  namespace: test-busybox
+data:
+  httpd.sh: httpd -f -p 8280 -h /var/www/
+  index.html: |-
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container and Pod level logs</title>
+    </head>
+    <body>
+    <h1>Logs from containers</h1>
+    <embed src="container-logs.txt" type="text/plain" width="300" height="200">
+    </body>
+    <body>
+    <h1>Logs from pods</h1>
+    <embed src="pod-logs.txt" type="text/plain" width="300" height="200">
+    </body>
+    </html>
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  creationTimestamp:
+  name: test-busybox-client-container-config
+  namespace: test-busybox
+data:
+  podinfo.mounthPath: /etc/podinfo
+  command-arg.file: |-
+      while true; do
+        echo -en '\n' >> /var/www/pcinfo.txt ;
+        if [[ -e /etc/podinfo/metadata ]]; then
+          echo -en '\n\n'; cat /etc/podinfo/labels >> /var/www/pcinfo.txt ; fi;
+        if [[ -e /etc/podinfo/labels ]]; then
+          echo -en '\n\n'; cat /etc/podinfo/labels >> /var/www/pcinfo.txt ; fi;
+        if [[ -e /etc/podinfo/annotations ]]; then
+          echo -en '\n\n'; cat /etc/podinfo/annotations >> /var/www/pcinfo.txt ; fi;        
+        if [[ -e /etc/podinfo/cpu_limit ]]; then
+          echo -en '\n'; cat /etc/podinfo/cpu_limit >> /var/www/pcinfo.txt ; fi;
+        if [[ -e /etc/podinfo/cpu_request ]]; then
+          echo -en '\n'; cat /etc/podinfo/cpu_request >> /var/www/pcinfo.txt ; fi;
+        if [[ -e /etc/podinfo/mem_limit ]]; then
+          echo -en '\n'; cat /etc/podinfo/mem_limit >> /var/www/pcinfo.txt ; fi;
+        if [[ -e /etc/podinfo/mem_request ]]; then
+          echo -en '\n'; cat /etc/podinfo/mem_request >> /var/www/pcinfo.txt ; fi;
+        sleep 5;
+      done;

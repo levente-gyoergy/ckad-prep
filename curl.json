@@ -1,0 +1,94 @@
+[
+    {
+        "Id": "sha256:fef613e265f0da100bbd6f5b587a868e7e358d0ada82fd1867ced9531474277a",
+        "RepoTags": [
+            "curlimages/curl:latest"
+        ],
+        "RepoDigests": [
+            "curlimages/curl@sha256:25d29daeb9b14b89e2fa8cc17c70e4b188bca1466086907c2d9a4b56b59d8e21"
+        ],
+        "Parent": "",
+        "Comment": "FROM localhost/curl-base-linux-arm64:8.7.1",
+        "Created": "2024-03-27T10:10:34.923063288Z",
+        "Container": "",
+        "ContainerConfig": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": null,
+            "Cmd": null,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": null
+        },
+        "DockerVersion": "",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "curl_user",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "CURL_CA_BUNDLE=/cacert.pem"
+            ],
+            "Cmd": [
+                "curl"
+            ],
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "/home/curl_user",
+            "Entrypoint": [
+                "/entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "docker.cmd": "podman run -it quay.io/curl/:8.7.1",
+                "io.buildah.version": "1.23.1",
+                "maintainer": "James Fuller <jim.fuller@webcomposite.com>",
+                "name": "curl-linux-arm64:8.7.1",
+                "org.opencontainers.image.description": "minimal image for curl",
+                "org.opencontainers.image.licenses": "MIT",
+                "org.opencontainers.image.source": "https://github.com/curl/curl-container",
+                "version": "8.7.1"
+            }
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 19525765,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/8f501bb39803ffdc6a5ffa3325063c59e14900e6b818634db2d8985e18c832b5/diff:/var/lib/docker/overlay2/2c4ef2d8c7b2f21b3efed269f9ea43f40d22060f9eacd4e236f7926139f7879c/diff",
+                "MergedDir": "/var/lib/docker/overlay2/71c80d07ebe2f450ba4b8e6a226ffdd5c494589234aadc2586069564a35bc73f/merged",
+                "UpperDir": "/var/lib/docker/overlay2/71c80d07ebe2f450ba4b8e6a226ffdd5c494589234aadc2586069564a35bc73f/diff",
+                "WorkDir": "/var/lib/docker/overlay2/71c80d07ebe2f450ba4b8e6a226ffdd5c494589234aadc2586069564a35bc73f/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:b09314aec293bcd9a8ee5e643539437b3846f9e5e55f79e282e5f67e3026de5e",
+                "sha256:0a88b4345d814644a935d56567a7dd9fb536a1ab2d3c267ee9379f0df792e5b3",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]

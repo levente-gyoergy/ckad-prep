@@ -1,0 +1,101 @@
+[
+    {
+        "Id": "sha256:f9b88f5c76ee5a158c7ad8ccb5efa4ceca9f9d1103d4ff0c5ca16369b072d693",
+        "RepoTags": [
+            "nginx:latest"
+        ],
+        "RepoDigests": [
+            "nginx@sha256:32e76d4f34f80e479964a0fbd4c5b4f6967b5322c8d004e9cf0cb81c93510766"
+        ],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2024-05-03T19:49:21Z",
+        "Container": "",
+        "ContainerConfig": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": null,
+            "Cmd": null,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": null
+        },
+        "DockerVersion": "",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NGINX_VERSION=1.25.5",
+                "NJS_VERSION=0.8.4",
+                "NJS_RELEASE=3~bookworm",
+                "PKG_RELEASE=1~bookworm"
+            ],
+            "Cmd": [
+                "nginx",
+                "-g",
+                "daemon off;"
+            ],
+            "ArgsEscaped": true,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>"
+            },
+            "StopSignal": "SIGQUIT"
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 192928345,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/6e1b0f16000a8231e54c85a0a374abb1545194cba17d03df56c115c7fee4dfdf/diff:/var/lib/docker/overlay2/28c12cb6207d4a2dce7888d456371a5211bd0afd1b0e22465e3baa473e4f2d34/diff:/var/lib/docker/overlay2/0a1cf0dfcc2ab374640065607f8e1ba4c2ae876a8575c046fe9e64109f05c267/diff:/var/lib/docker/overlay2/7f644cf17affa8444e1e359c925a6ddd3016a6df2e4469aa9e9d10b188721f1c/diff:/var/lib/docker/overlay2/0312e39df60a0cd07c141ed89ebced875e3771820ed17a7c9e803e4503b51763/diff:/var/lib/docker/overlay2/9dc83cc0db9fcdd7817021665f58a3ade592875628a84a2dec7be3fc7d6a931e/diff",
+                "MergedDir": "/var/lib/docker/overlay2/8a9d00c5c810a515779bcd7866b12dfe06b73613f7d95526a22ff503e4ab8e8e/merged",
+                "UpperDir": "/var/lib/docker/overlay2/8a9d00c5c810a515779bcd7866b12dfe06b73613f7d95526a22ff503e4ab8e8e/diff",
+                "WorkDir": "/var/lib/docker/overlay2/8a9d00c5c810a515779bcd7866b12dfe06b73613f7d95526a22ff503e4ab8e8e/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:8560597d922ca8edaeea533c482a61b9cd840e55ae55cedd31b0087547e2933d",
+                "sha256:39c300f46f6cae1d7c4ba8983d52044c8bb6fa4082cfd7bf7508ddcacf0e1d8c",
+                "sha256:7e028cfbf374406b8af471ee8f6a18a044a05102c94ac1849b077fe280ddfc9a",
+                "sha256:25aa6aa4ec971d93eecfcb11f840d70e9c4ec48fd9df73d85d671aa0ce05f825",
+                "sha256:285cf1fde295f952ef0c301a9798ec67346f3a67342a6cf59eb72dc80ecc9238",
+                "sha256:d672eb98862f9fc25f6038115c5dac40fe0388c4f3f23897297398fd9010faef",
+                "sha256:2a4e0f85c473d8c1f2988a45f6fe3a080385cb0f22cd2e179d16cbb512ba0d58"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]

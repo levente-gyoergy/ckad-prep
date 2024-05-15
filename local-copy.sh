@@ -1,0 +1,1 @@
+wget -x $(curl http://problemsolving.hu/ckad/file-list | sed 's/^../http:\/\/problemsolving.hu\/ckad\//')
