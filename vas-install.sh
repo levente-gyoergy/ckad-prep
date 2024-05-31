@@ -18,3 +18,8 @@ kubectl krew install score
 kubectl api-resources --verbs=list --namespaced -o name \
   | xargs -n1 -I{} bash -c "kubectl get {} --all-namespaces -oyaml && echo ---" \
   | kubectl score score -
+
+
+helm repo add falcosecurity https://falcosecurity.github.io/charts  
+helm repo update  
+helm install falco -f values.yaml falcosecurity/falco
